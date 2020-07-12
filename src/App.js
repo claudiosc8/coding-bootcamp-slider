@@ -40,18 +40,17 @@ function App() {
       <div className='container'>
       <div className='testimonial' onKeyDown={handleKey} tabIndex="0">
 
-
           <div 
           className='text-wrapper' 
           >
             <div className='text'>
             <motion.span
-            initial={{opacity:0}}
-            animate={{opacity:1}}
-            transition={{opacity: { duration: 1 }}}
-            key={page}
+              initial={{opacity:0}}
+              animate={{opacity:1}}
+              transition={{opacity: { duration: 1 }}}
+              key={page}
             >
-            {Items[imageIndex].text}
+              {Items[imageIndex].text}
             </motion.span>
             </div>
             <motion.div 
