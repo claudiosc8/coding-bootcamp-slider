@@ -1,8 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow&family=Barlow+Condensed:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap');
 
-$Dark-Blue: hsl(240, 38%, 20%)
+$Dark-Blue: hsl(240, 38%, 20%);
 $Grayish-Blue: hsl(240, 18%, 77%);
-$Light-Grayish-Blue: hsl(207, 33%, 95%);
 
 html {
   box-sizing: border-box;
@@ -16,20 +15,228 @@ html, body {
   min-height: 100vh;
   margin:0;
   height:0;
+  font-size: 32px;
 }
 
 body {
   background-color: #fff;
-  font-family: 'Barlow', sans-serif;
-  font-weight: 400;
-  font-size: 18px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
   position: relative;
   overflow-x: hidden;
+  background-image: url('./images/pattern-curve.svg');
+  background-size: 600px;
+  background-position: bottom left;
+  background-repeat: no-repeat;
 }
+
+#root {
+  height: 100%;
+}
+
+.container {
+  max-width: 1150px;
+  padding:20px;
+  margin:0 auto;
+  height:100%;
+  display: flex;
+  align-items: center;
+}
+
+.testimonial {
+  display: flex;
+  justify-content: flex-end;
+  width:100%;
+  position: relative;
+  &:focus {
+    outline:none;
+  };
+  & .image-wrapper {
+    max-width: 540px;
+    height: 540px;
+    width:100%;
+    position: relative;
+    box-shadow: 20px 20px 40px rgba( $Dark-Blue, .2 );
+    & .image {
+      border-radius: 4px;
+      height:100%;
+      width:100%;
+      overflow:hidden;
+      background-color: lighten($Grayish-Blue, 20%);
+      display: flex;
+      position:relative;
+      & img {
+        width:100%;
+        position: absolute;
+        z-index: 1;
+      }
+    }
+    &:before {
+      content: '';
+      background-image: url('./images/pattern-bg.svg');
+      width: 129%;
+      height: 130%;
+      position: absolute;
+      right: -17.4%;
+      bottom: -10%;
+      background-size: 100%;
+      background-repeat: no-repeat;
+      z-index: -1;
+      background-position: bottom right;
+    }
+    & .controls {
+      position:absolute;
+      bottom:0;
+      left:62px;
+      display: flex;
+      transform: translateY(50%);
+      z-index: 2;
+      & .control {
+        background-color: #fff;
+        width:56px;
+        height:56px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        &:hover {
+          background-color: lighten($Grayish-Blue, 20%);
+        }
+        &:active {
+          background-color: lighten($Grayish-Blue, 10%);
+        }
+        &.prev {
+          border-radius: 100px 0 0 100px;
+        }
+        &.next {
+          border-radius: 0 100px 100px 0;
+        }
+      }
+    }
+  }
+  & .text-wrapper {
+    position: absolute;
+    left:20px;
+    top:0;
+    bottom:0;
+    max-width:57%;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    z-index: 2;
+    & .text {
+      color:$Dark-Blue;
+      font-weight: 300;
+      font-size: 1rem;
+      line-height:1.4rem;
+      padding:65px 0 50px;
+      position: relative;
+      
+      &:before {
+        content: '';
+        background-image: url('./images/pattern-quotes.svg');
+        width:120px;
+        height:100px;
+        position: absolute;
+        background-size: contain;
+        top:0;
+        left:95px;
+        background-repeat: no-repeat;
+        z-index: -1;
+      }
+    }
+    & .info {
+      display: flex;
+      & .source {
+        color:$Dark-Blue;
+        font-weight: 700;
+        font-size: .63rem;
+        padding-right: 10px;
+      }
+      & .role {
+        color:$Grayish-Blue;
+        font-weight: 500;
+        font-size: .63rem;
+      }
+    }
+
+  }
+}
+
 
 
 
 @media screen and (max-width: 768px) {
   
+  body {
+    background-size: 100%;
+  }
+  
+  .container {
+    align-items: flex-start;
+    padding:55px 20px;
+  }
 
+  .testimonial {
+    flex-wrap: wrap;
+    justify-content: center;
+    & .image-wrapper {
+      order:1;
+      -webkit-box-flex: 0;
+      max-width: 100%;
+      width:255px;
+      height:255px;
+      margin-bottom: 55px;
+      & .controls {
+        bottom:0;
+        left:0;
+        right:0;
+        max-width: 80px;
+        margin:0 auto;
+        & .control {
+          width:40px;
+          height:40px;
+          & img {
+            width:8px;
+          }
+        }
+      }
+    }
+    & .text-wrapper {
+      position: relative;
+      left:initial;
+      right:initial;
+      top:initial;
+      bottom:initial;
+      order:2;
+      -webkit-box-flex: 0;
+      flex: 0 0 100%;
+      max-width: 100%;
+      text-align: center;
+      & .text {
+          font-size: 0.6rem;
+          line-height:1rem;
+          padding:25px 0;
+          &:before {
+            width:60px;
+            height:50px;
+            top:0;
+            left:0;
+            right:0;
+            margin:0 auto;
+          }
+      }
+      & .info {
+        flex-direction: column;
+        & .source {
+          font-size: 0.5rem;
+          padding:0;
+        }
+        & .role {
+          font-size: 0.5rem;
+        }
+      }
+    }
+  }
 }
