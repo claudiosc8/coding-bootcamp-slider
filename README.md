@@ -1,5 +1,7 @@
 # Frontend Mentor - Coding Bootcamp Testimonials Slider
 
+**Check the deployed app [here](https://coding-bootcamp-slider-lovat.vercel.app)**
+
 ![Design preview for the Coding Bootcamp Testimonials Slider coding challenge](./design/desktop-preview.jpg)
 
 ## Welcome! 👋
