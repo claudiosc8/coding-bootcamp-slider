@@ -2,6 +2,8 @@
 
 **Check the deployed app [here](https://coding-bootcamp-slider-lovat.vercel.app)**
 
+**Check the report on Frontend Mentor [here](https://www.frontendmentor.io/solutions/coding-bootcamp-testimonials-slider-using-react-and-motion-framer-qs4g-6H3K)**
+
 ![Design preview for the Coding Bootcamp Testimonials Slider coding challenge](./design/desktop-preview.jpg)
 
 ## Welcome! 👋
